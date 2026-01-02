@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petualangan Bangun Ruang - Kelas 2 SD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fdfcf0;
+            scroll-behavior: smooth;
+        }
+        .font-kids { font-family: 'Comic Neue', cursive; }
+        .card-shape {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-shape:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .bg-pattern {
+            background-color: #3b82f6;
+            background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+        }
+        .option-btn {
+            transition: all 0.2s;
+        }
+        .option-btn:hover {
+            background-color: #e0f2fe;
+            transform: translateX(5px);
+        }
+        .selected-option {
+            background-color: #3b82f6 !important;
+            color: white !important;
+            border-color: #2563eb !important;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigasi -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600 font-kids"><i class="fas fa-shapes mr-2"></i>Ruang Pintar</h1>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#belajar" class="hover:text-blue-500 font-semibold">Materi</a>
+                <a href="#permainan" class="bg-yellow-400 px-6 py-2 rounded-full font-bold hover:bg-yellow-500 transition shadow-md">
+                    <i class="fas fa-gamepad mr-2"></i>Main Game
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="bg-pattern text-white py-24 px-6 text-center">
+        <div class="animate-bounce inline-block mb-4">
+            <i class="fas fa-rocket text-6xl text-yellow-300"></i>
+        </div>
+        <h2 class="text-5xl font-bold font-kids mb-4">Halo Penjelajah Cilik! 🌟</h2>
+        <p class="text-xl max-w-2xl mx-auto opacity-90">Siap belajar mengenal benda-benda hebat di sekitarmu? Ayo kita mulai petualangannya!</p>
+    </header>
+
+    <!-- Materi Section -->
+    <main id="belajar" class="container mx-auto py-16 px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold font-kids text-blue-800">Pilih Bangun Ruang</h2>
+            <p class="text-gray-600">Klik salah satu kotak di bawah untuk belajar dan kuis!</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-10">
+            
+            <!-- KUBUS -->
+            <div class="card-shape bg-orange-50 p-6 rounded-[40px] border-4 border-orange-400 flex flex-col">
+                <div class="relative mb-6">
+                    <img src="kubus.jpg" alt="Kubus" class="w-full h-56 object-cover rounded-3xl shadow-md border-4 border-white" onerror="this.src='https://via.placeholder.com/400x300/fb923c/ffffff?text=Dadu+Kubus'">
+                    <span class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-1 rounded-full text-xs font-bold">KOTAK SAMA SISI</span>
+                </div>
+                <h3 class="text-3xl font-bold text-orange-600 font-kids mb-3">🎲 Kubus</h3>
+                <p class="text-gray-700 mb-4">"Aku adalah si kotak ajaib yang punya 6 wajah yang sama besar!"</p>
+                
+                <div class="bg-white p-4 rounded-2xl mb-6 shadow-inner space-y-2 border border-orange-200">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-orange-600">Isi (Volume)</span>
+                        <span class="bg-orange-100 px-2 py-1 rounded text-sm">s × s × s</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-orange-600">Kulit (Luas)</span>
+                        <span class="bg-orange-100 px-2 py-1 rounded text-sm">6 × s²</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Contoh Benda:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm border">Dadu</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm border">Rubik</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm border">Kado</span>
+                    </div>
+                </div>
+
+                <button onclick="openQuiz('kubus')" class="mt-auto w-full bg-orange-500 text-white font-bold py-4 rounded-2xl hover:bg-orange-600 transition shadow-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-pencil-alt"></i> Kuis Kubus
+                </button>
+            </div>
+
+            <!-- BALOK -->
+            <div class="card-shape bg-blue-50 p-6 rounded-[40px] border-4 border-blue-400 flex flex-col">
+                <div class="relative mb-6">
+                    <img src="balok.jpg" alt="Balok" class="w-full h-56 object-cover rounded-3xl shadow-md border-4 border-white" onerror="this.src='https://via.placeholder.com/400x300/60a5fa/ffffff?text=Kotak+Susu+Balok'">
+                    <span class="absolute top-4 right-4 bg-blue-500 text-white px-4 py-1 rounded-full text-xs font-bold">KOTAK PANJANG</span>
+                </div>
+                <h3 class="text-3xl font-bold text-blue-600 font-kids mb-3">📦 Balok</h3>
+                <p class="text-gray-700 mb-4">"Aku mirip kubus, tapi aku lebih panjang ke samping atau ke atas!"</p>
+                
+                <div class="bg-white p-4 rounded-2xl mb-6 shadow-inner space-y-2 border border-blue-200">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-blue-600">Isi (Volume)</span>
+                        <span class="bg-blue-100 px-2 py-1 rounded text-sm">p × l × t</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-blue-600">Kulit (Luas)</span>
+                        <span class="bg-blue-100 px-2 py-1 rounded text-sm">2(pl+pt+lt)</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Contoh Benda:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm border">Lemari</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm border">Kotak Susu</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm border">Kasur</span>
+                    </div>
+                </div>
+
+                <button onclick="openQuiz('balok')" class="mt-auto w-full bg-blue-500 text-white font-bold py-4 rounded-2xl hover:bg-blue-600 transition shadow-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-pencil-alt"></i> Kuis Balok
+                </button>
+            </div>
+
+            <!-- CAMPURAN -->
+            <div class="card-shape bg-purple-50 p-6 rounded-[40px] border-4 border-purple-400 flex flex-col">
+                <div class="relative mb-6">
+                    <img src="campuran.jpg" alt="Campuran" class="w-full h-56 object-cover rounded-3xl shadow-md border-4 border-white" onerror="this.src='https://via.placeholder.com/400x300/a78bfa/ffffff?text=Rumah+Campuran'">
+                    <span class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-1 rounded-full text-xs font-bold">GABUNGAN</span>
+                </div>
+                <h3 class="text-3xl font-bold text-purple-600 font-kids mb-3">🏰 Campuran</h3>
+                <p class="text-gray-700 mb-4">"Aku adalah gabungan dari dua atau lebih kotak. Sangat kuat!"</p>
+                
+                <div class="bg-white p-4 rounded-2xl mb-6 shadow-inner space-y-2 border border-purple-200">
+                    <div class="text-center p-2">
+                        <p class="font-bold text-purple-600">Cara Hitung:</p>
+                        <p class="text-sm">Isi Bangun A + Isi Bangun B</p>
+                        <p class="text-xs text-gray-400 italic mt-1">(Tinggal ditambah saja!)</p>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Contoh Benda:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm border">Rumah</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm border">Istana Mainan</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm border">Mobil Truk</span>
+                    </div>
+                </div>
+
+                <button onclick="openQuiz('campuran')" class="mt-auto w-full bg-purple-500 text-white font-bold py-4 rounded-2xl hover:bg-purple-600 transition shadow-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-pencil-alt"></i> Kuis Campuran
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal Kuis -->
+    <div id="quiz-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white w-full max-w-2xl rounded-[40px] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div id="quiz-header" class="p-6 text-white text-center">
+                <h2 id="modal-title" class="text-3xl font-kids font-bold">Kuis Seru</h2>
+            </div>
+            <div id="quiz-body" class="p-8 overflow-y-auto">
+                <div id="questions-container"></div>
+            </div>
+            <div id="quiz-footer" class="p-6 bg-gray-50 flex gap-4">
+                <button onclick="closeQuiz()" class="flex-1 px-6 py-3 rounded-xl font-bold text-gray-500 hover:bg-gray-200">Batal</button>
+                <button id="submit-quiz" class="flex-[2] px-6 py-3 rounded-xl font-bold text-white bg-green-500 hover:bg-green-600 shadow-md">Selesai & Lihat Nilai</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Permainan & Wordwall -->
+    <section id="permainan" class="bg-blue-50 py-20 px-6 border-t-8 border-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold font-kids text-blue-600 mb-4">Zona Bermain 🎮</h2>
+            <p class="text-gray-600 mb-10">Sudah pintar? Ayo main game mencocokkan benda!</p>
+            
+            <div class="max-w-md mx-auto">
+                <a href="https://wordwall.net/resource/104761698" target="_blank" class="block group bg-white border-4 border-yellow-400 p-10 rounded-[50px] hover:bg-yellow-400 transition-all shadow-xl hover:-translate-y-2">
+                    <i class="fas fa-puzzle-piece text-7xl text-yellow-500 group-hover:text-white mb-6"></i>
+                    <h4 class="text-3xl font-bold text-gray-800 group-hover:text-white mb-2 font-kids">Main di Wordwall</h4>
+                    <p class="text-gray-500 group-hover:text-white">Klik untuk tantangan lebih seru!</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white py-12 text-center">
+        <p class="font-bold text-xl mb-2 font-kids">Terus Semangat Belajar Ya! 📖</p>
+        <p class="opacity-60 text-sm">© 2026 Media Pembelajaran Bangun Ruang SD Kelas 2</p>
+    </footer>
+
+    <!-- MathJax for nice formulas -->
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <script>
+        const quizData = {
+            kubus: {
+                title: "Kuis Kubus Ajaib",
+                color: "bg-orange-500",
+                questions: [
+                    { q: "Ada berapa sisi pada kubus?", a: ["4 Sisi", "6 Sisi", "8 Sisi"], c: 1 },
+                    { q: "Dadu adalah contoh benda berbentuk?", a: ["Kubus", "Balok", "Bola"], c: 0 },
+                    { q: "Semua sisi kubus ukurannya...", a: ["Berbeda", "Sama besar", "Ada yang panjang"], c: 1 },
+                    { q: "Jika sisi kubus adalah 2, berapa volumenya (2x2x2)?", a: ["4", "6", "8"], c: 2 },
+                    { q: "Kubus punya berapa pojok (titik sudut)?", a: ["4", "6", "8"], c: 2 }
+                ]
+            },
+            balok: {
+                title: "Kuis Balok Panjang",
+                color: "bg-blue-500",
+                questions: [
+                    { q: "Kotak susu biasanya berbentuk?", a: ["Kubus", "Balok", "Bola"], c: 1 },
+                    { q: "Balok punya berapa sisi?", a: ["6 Sisi", "12 Sisi", "8 Sisi"], c: 0 },
+                    { q: "Mana yang merupakan rumus Isi (Volume) Balok?", a: ["s x s x s", "p x l x t", "p + l + t"], c: 1 },
+                    { q: "Penghapus sekolah yang panjang berbentuk?", a: ["Balok", "Kubus", "Kerucut"], c: 0 },
+                    { q: "Sisi yang berhadapan pada balok ukurannya...", a: ["Sama besar", "Berbeda jauh", "Kecil sekali"], c: 0 }
+                ]
+            },
+            campuran: {
+                title: "Kuis Bangun Campuran",
+                color: "bg-purple-500",
+                questions: [
+                    { q: "Bangun campuran adalah gabungan dari...", a: ["Satu kotak saja", "Dua atau lebih kotak", "Hanya garis"], c: 1 },
+                    { q: "Untuk hitung volume campuran, kita harus...", a: ["Dikurangi", "Dijumlahkan", "Dibiarkan saja"], c: 1 },
+                    { q: "Rumah mainan adalah contoh gabungan balok dan...", a: ["Bangun lainnya", "Tidak ada", "Air"], c: 0 },
+                    { q: "Berapa kali kita hitung volume jika ada 2 bangun bergabung?", a: ["1 kali", "2 kali", "Tidak usah"], c: 1 },
+                    { q: "Truk kontainer besar termasuk benda berbentuk?", a: ["Kubus", "Campuran", "Titik"], c: 1 }
+                ]
+            }
+        };
+
+        let currentType = "";
+        let answers = [];
+
+        function openQuiz(type) {
+            currentType = type;
+            const data = quizData[type];
+            answers = new Array(data.questions.length).fill(null);
+            
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('quiz-header').className = `p-6 text-white text-center ${data.color}`;
+            
+            const container = document.getElementById('questions-container');
+            container.innerHTML = "";
+            
+            data.questions.forEach((item, qIdx) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = "mb-8 p-4 bg-gray-50 rounded-2xl";
+                qDiv.innerHTML = `
+                    <p class="font-bold text-lg mb-4">${qIdx + 1}. ${item.q}</p>
+                    <div class="grid gap-3">
+                        ${item.a.map((opt, aIdx) => `
+                            <button onclick="pickAnswer(${qIdx}, ${aIdx}, this)" class="option-btn text-left p-4 rounded-xl border-2 border-gray-200 bg-white font-medium">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(qDiv);
+            });
+
+            document.getElementById('submit-quiz').onclick = () => showResult(type);
+            document.getElementById('quiz-modal').classList.replace('hidden', 'flex');
+        }
+
+        function pickAnswer(qIdx, aIdx, btn) {
+            const parent = btn.parentElement;
+            parent.querySelectorAll('button').forEach(b => b.classList.remove('selected-option'));
+            btn.classList.add('selected-option');
+            answers[qIdx] = aIdx;
+        }
+
+        function showResult(type) {
+            if (answers.includes(null)) {
+                alert("Ups! Ada soal yang belum dijawab nih. Jawab semua ya!");
+                return;
+            }
+
+            const data = quizData[type];
+            let score = 0;
+            answers.forEach((ans, idx) => {
+                if (ans === data.questions[idx].c) score++;
+            });
+
+            const percentage = (score / data.questions.length) * 100;
+            
+            const container = document.getElementById('quiz-body');
+            let feedback = "";
+            let icon = "";
+            
+            if (percentage === 100) {
+                feedback = "LUAR BIASA! Kamu Jenius! 🌟";
+                icon = "fa-trophy text-yellow-500";
+            } else if (percentage >= 60) {
+                feedback = "HEBAT! Kamu sudah paham! 👍";
+                icon = "fa-thumbs-up text-blue-500";
+            } else {
+                feedback = "SEMANGAT! Coba baca lagi ya! 💪";
+                icon = "fa-book-open text-orange-500";
+            }
+
+            container.innerHTML = `
+                <div class="text-center py-10">
+                    <i class="fas ${icon} text-8xl mb-6"></i>
+                    <h3 class="text-3xl font-bold font-kids mb-2">${feedback}</h3>
+                    <div class="text-6xl font-bold text-gray-800 mb-4">${percentage}%</div>
+                    <p class="text-gray-500">Kamu menjawab benar ${score} dari ${data.questions.length} soal.</p>
+                    <button onclick="closeQuiz()" class="mt-8 bg-blue-600 text-white px-10 py-3 rounded-full font-bold shadow-lg">Belajar Lagi</button>
+                </div>
+            `;
+            document.getElementById('quiz-footer').classList.add('hidden');
+        }
+
+        function closeQuiz() {
+            document.getElementById('quiz-modal').classList.replace('flex', 'hidden');
+            document.getElementById('quiz-footer').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
